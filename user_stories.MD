@@ -21,6 +21,6 @@ working
 
 Objects  | Messages
 ------------- | -------------
-Person  | use_bike, check_bike
+Person  |
 Bike | is_working?
 DockingStation | release_bike
