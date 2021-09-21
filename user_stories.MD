@@ -21,6 +21,6 @@ working
 
 Objects  | Messages
 ------------- | -------------
-Person  |
+Person  | dock
 Bike | is_working?
-DockingStation | release_bike
+DockingStation | release_bike, bikes_available?
