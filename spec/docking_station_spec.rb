@@ -14,6 +14,9 @@ describe DockingStation do
 
   it "user docks bike and it is stored in docking station" do
     expect(docking_station).to respond_to(:dock).with(1).argument
-    #docking_station.attr_reader(:docked_bikes).should include @bike
+  
+    docking_station.dock(bike)
+    #using the attr_reader we are able to read the instance variables from outside of the object
+    expect(docking_station.docked_bikes).to include bike
   end
 end
