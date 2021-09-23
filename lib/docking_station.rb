@@ -15,9 +15,8 @@ class DockingStation
     @docked_bikes.shift
   end
 
-  def dock(bike, is_working=true)
+  def dock(bike, working = true)
     raise "docking station full" unless !full?
-    bike.working = is_working
     bike.working? ? (@docked_bikes.unshift(bike)) : (@docked_bikes.push(bike))
   end
 
