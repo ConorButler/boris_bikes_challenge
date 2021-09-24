@@ -3,7 +3,9 @@ class Van
   def initialize
     @van_storage = []
   end
-  def collect(bike)
-    @van_storage << bike
+  def collect(bikes)
+    bikes.each do |bike|
+      @van_storage << bike unless bike.working?
+    end
   end
 end

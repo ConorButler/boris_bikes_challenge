@@ -1,20 +1,23 @@
 require 'van'
 
 describe Van do
-  let(:bike) {double("Bike", :working? => false)}
-  van = Van.new
-  it 'can store bikes' do
-    expect(van.van_storage).to be_a Array
-  end
-  #let(:docking_station) {double("Docking station")}
-  context 'it collects bikes and stores them in the van' do
+  let(:van) { Van.new }
+
+  context 'collecting bikes' do
     let(:docking_station) {double("Docking station")}
     it 'collects 1 bike' do
-      van.collect(bike)
+      allow(docking_station).to receive(:docked_bikes).and_return(double("Bike", :working? => false))
+      van.collect(docking_station.docked_bikes)
       expect(van.van_storage.length).to eq(1)
     end
+    it 'collects 2 broken bikes' do
+      bikes_to_collect = [double("Bike", :working? => false),
+        double("Bike", :working? => true),
+        double("Bike", :working? => false)]
+      allow(docking_station).to receive(:docked_bikes).and_return(bikes_to_collect)
+      van.collect(docking_station.docked_bikes)
+      expect(van.van_storage.length).to eq(2)
+    end
   end
-  let(:garage) {double("Garage")}
-  context 'it drops off broken bikes at a garage' do
-    
+  let(:garage) {double("Garage")}    
 end
