@@ -19,5 +19,13 @@ describe Van do
       expect(van.van_storage.length).to eq(2)
     end
   end
-  let(:garage) {double("Garage")}    
+  # let(:garage) {double("Garage")}
+  # it "delivers broken bikes to garage" do
+  #   allow(garage).to receive(:garage_storage)
+    
+  #   van.deliver
+  #   expect(van.van_storage.length).to eq(0)
+  #   expect(garage.garage_storage.length).to eq(2)
+  # end
 end
+
