@@ -36,6 +36,7 @@ describe DockingStation do
   context "broken bikes" do
     let(:docking_station_with_broken_bike) { DockingStation.new }
     let(:bike) {double("Bike", :working? => true)}
+    let(:broken_bike) {double("Broken Bike", :working? => false)}
     before(:each) {
       allow(bike).to receive(:working?).and_return(false)
       docking_station_with_broken_bike.dock(bike, false)
@@ -47,6 +48,11 @@ describe DockingStation do
     
     it "broken bikes cannot be released from the docking station" do
       expect{docking_station_with_broken_bike.release_bike}.to raise_error "bike not working"
+    end
+
+    it "broken bikes can be docked" do
+      docking_station_with_broken_bike.dock(broken_bike)
+      expect(docking_station_with_broken_bike.docked_bikes).to include(broken_bike)
     end
   end
 
