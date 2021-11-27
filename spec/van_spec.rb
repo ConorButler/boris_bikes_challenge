@@ -4,7 +4,7 @@ describe Van do
   let(:bike1) { double("Bike1", :working? => true) }
   let(:bike2) { double("Bike2", :working? => false) }
   let(:bike3) { double("Bike3", :working? => false) }
-  let(:van) { Van.new }
+  let(:van) { described_class.new }
 
   it 'collects only broken bikes' do
     van.collect([bike1, bike2, bike3])
