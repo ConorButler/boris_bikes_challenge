@@ -60,4 +60,4 @@ I'd like vans to collect working bikes from garages and distribute them to docki
 
 # Tests
 
-![Tests](https://i.gyazo.com/0a32cbba1d99d0be4167c446d8925af0.png)
+![Tests](https://i.gyazo.com/3c11f2e5be295c8506ee3a2aef4c5a49.png)
